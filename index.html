@@ -129,18 +129,26 @@
         <div class="carousel-nav">
           <div id="prev" class="bg-brown">
             <img
-              src="./images/right.png"
+              src="./images/Ornament 33.png"
               alt="Previous"
               style="width: 30px; height: auto; background-color: transparent"
             />
           </div>
           <div id="next" class="bg-brown">
             <img
-              src="./images/left.png"
+              src="./images/Ornament 82.png"
               alt="Next"
               style="width: 30px; height: auto; background-color: transparent"
             />
           </div>
+        </div>
+        <div class="carousel-mobile">
+           <div class="mb-5 img-fluid"><img src="./images/c1.png" alt=""></div>
+            <div class="mb-5 img-fluid"><img src="./images/c2.png" alt=""></div>
+            <div class="mb-5 img-fluid"><img src="./images/c3.png" alt=""></div>
+            <div class="mb-5 img-fluid"><img src="./images/c4.png" alt=""></div>
+           <div class="mb-5 img-fluid"><img src="./images/c5.png" alt=""></div>
+            <div class="mb-5 img-fluid"><img src="./images/c6.png" alt=""></div>
         </div>
       </div>
     </section>
@@ -381,9 +389,7 @@
               </h4>
 
               <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae ipsum senectus aenean tellus lectus risus id. Enim elit feugiat nunc ac faucibus nibh elit massa.
               </p>
             </div>
             <!-- Grid column -->
@@ -512,12 +518,12 @@
         updateCarousel();
       });
 
-      function updateCarousel() {
-        // Calculate the offset for the current slide
-        const offset = -currentIndex * 100;
-        // Update the carousel track's transform property to shift slides
-        carouselTrack.style.transform = `translateX(${offset}%)`;
-      }
+     function updateCarousel() {
+  const slideWidth = carouselTrack.offsetWidth; // Get the width of the visible area
+  const offset = -currentIndex * slideWidth; // Calculate the offset dynamically
+  carouselTrack.style.transform = `translateX(${offset}px)`; // Slide the track
+}
+
 
       //  slider
       let images = Array.from(document.getElementsByClassName("img-slider"));
@@ -529,6 +535,6 @@
       images.forEach(function (image) {
         image.addEventListener("click", updateImage);
       });
-    </script>
+    </script> 
   </body>
 </html>
